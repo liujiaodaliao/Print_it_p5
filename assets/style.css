@@ -120,23 +120,31 @@ header {
 	z-index: -1;
 	object-fit: cover;
 	object-position: center;
+
+	display: none;
 }
+
+.im{
+	display: block;
+}
+
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
 
-	width: 100%;
-    display: flex;
-	justify-content: space-between;
+	cursor: pointer;
+	opacity: 0.1;
+	transition: 0.5s;
+}
+#banner .arrow:hover{
+	opacity: 1;
 }
 #banner .arrow_left {
-	margin-left: 10px;
-	cursor: pointer;
+	left: 10px;
 }
 #banner .arrow_right {
-	margin-right: 10px;
-	cursor: pointer;
+	right: 10px;
 }
 /* Gestion des points du carrousel */
 .dots {
@@ -151,9 +159,14 @@ header {
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	transition: 0.3s;
 }
-.dot_selected:hover {
+.dot:hover{
+	background-color: #fff;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+}
+.dot_selected {
 	background-color: #fff;
 }
 /* Fin du code CSS pour le carousel */
