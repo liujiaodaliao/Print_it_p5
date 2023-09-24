@@ -20,5 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
 ]
 //2 创建常量slides tableaux，定义image和标语tagline
 
+let currentIndex = 0; 
+//3 当前幻灯片索引index,以便切换幻灯片，初始值为0 表示初始状态下显示第一张幻灯片
+
+    //4 获取轮播相关的 DOM 元素,获取容器,4个轮播图，圆点数组，左箭头，右箭头，标语p
+    const banner = document.getElementById("banner");
+    const image = banner.querySelector("img"); 
+    const dots = banner.querySelectorAll(".dot");
+    const prevArrow = banner.querySelector(".arrow_left");
+    const nextArrow = banner.querySelector(".arrow_right");
+    const tagLine = banner.querySelector("p");
+
+   
 });
 //这段代码主要实现了一个基本的轮播功能，当页面加载完毕后会自动轮播幻灯片，用户也可以通过点击箭头或圆点手动切换幻灯片。
