@@ -59,6 +59,29 @@ let currentIndex = 0;
     //7 初始化第一张幻灯片
     updateTagLine(); 
 
-   
+    //8 左箭头点击事件，
+    //点击事件监听器 点击触发时，先停止轮播，点一次切换一页，圆点同步，3s后再次启动轮播
+    prevArrow.addEventListener("click", function () {
+        stopAutoSlide();
+        dots[currentIndex].classList.remove("dot_selected");
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        dots[currentIndex].classList.add("dot_selected");
+        updateTagLine(); 
+        autoSlideInterval = setInterval(autoSlide, 3000); 
+        console.log("The left arrow was clicked"); 
+        // 测试事件监听器是否成功运行
+    });
+
+    //9 右箭头点击事件，
+    nextArrow.addEventListener("click", function () {
+        stopAutoSlide(); 
+        dots[currentIndex].classList.remove("dot_selected");
+        currentIndex = (currentIndex + 1) % slides.length;
+        dots[currentIndex].classList.add("dot_selected");
+        updateTagLine(); 
+        autoSlideInterval = setInterval(autoSlide, 3000); 
+        console.log("The right arrow was clicked"); 
+    });
+
 });
 //这段代码主要实现了一个基本的轮播功能，当页面加载完毕后会自动轮播幻灯片，用户也可以通过点击箭头或圆点手动切换幻灯片。
