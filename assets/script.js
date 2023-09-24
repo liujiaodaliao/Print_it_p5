@@ -83,5 +83,18 @@ let currentIndex = 0;
         console.log("The right arrow was clicked"); 
     });
 
+    //10 点击圆点切换幻灯片
+    dots.forEach(function (dot, index) {
+        //用forEach方法每个圆点执行回调函数（参数1当前元素dot和当前元素的在数组中的索引），点击时切换，自动轮播停止，不点击时再重新启动轮播
+        dot.addEventListener("click", function () {  
+            stopAutoSlide(); 
+            dots[currentIndex].classList.remove("dot_selected");
+            currentIndex = index;
+            dots[currentIndex].classList.add("dot_selected");
+            updateTagLine(); 
+            autoSlideInterval = setInterval(autoSlide, 3000); 
+            console.log("Dots have been updated");
+        });
+    });
 });
 //这段代码主要实现了一个基本的轮播功能，当页面加载完毕后会自动轮播幻灯片，用户也可以通过点击箭头或圆点手动切换幻灯片。
