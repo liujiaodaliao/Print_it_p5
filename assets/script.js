@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-//2 创建常量slides tableaux，定义image和标语tagline
+//2 创建常量slides tableaux，定义image和标语tagline   
 
 let currentIndex = 0; 
 //3 当前幻灯片索引index,以便切换幻灯片，初始值为0 表示初始状态下显示第一张幻灯片
